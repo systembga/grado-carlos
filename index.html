@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Graduación virtual de Carlos Ricardo Orozco Carreño, Profesional en Derecho. 2 de octubre, 4:00 p.m.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Grado de Carlos Ricardo Orozco Carreño 🎓">
+<meta property="og:description" content="Acompáñanos de manera virtual el 2 de octubre a las 4:00 p.m.">
+<meta property="og:image" content="invitacion.jpg">
+<style>*{box-sizing:border-box}body{margin:0}img{max-width:100%}</style>
+<title>Grado de Carlos Ricardo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap">
+<style>
+/* Layout: una sola columna centrada, la invitación completa arriba y el botón grande justo debajo. Diseño de un solo tema (papel crema y azul marino), a propósito. */
+:root {
+  --paper: #f6f1e6;
+  --ink: #16305a;
+  --navy: #0f2a52;
+  --gold: #b8923f;
+  --muted: #5a6479;
+  --card: #fffdf8;
+  --serif: "Lora", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+body { background: var(--paper); color: var(--ink); font-family: var(--serif); }
+.wrap { max-width: 560px; margin: 0 auto; padding-inline: 16px; padding-block: 20px 40px; display: flex; flex-direction: column; gap: 18px; }
+.inv { display: block; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 30px rgba(15,42,82,.18); border: 1px solid rgba(184,146,63,.5); }
+.inv img { display: block; width: 100%; height: auto; }
+.btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--navy); color: #fff; text-decoration: none; font-weight: 600; font-size: 1.15rem; letter-spacing: .02em; padding: 18px 20px; border-radius: 999px; border: 2px solid var(--gold); box-shadow: 0 6px 18px rgba(15,42,82,.25); }
+.btn:hover { background: #163a6e; }
+.btn:focus-visible, .copy:focus-visible, .inv:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.btn svg { width: 22px; height: 22px; flex: none; }
+.hint { text-align: center; color: var(--muted); font-size: .95rem; margin: 0; text-wrap: balance; }
+.box { background: var(--card); border: 1px solid rgba(184,146,63,.45); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+.box p { margin: 0; font-size: .92rem; color: var(--muted); }
+.url { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .85rem; color: var(--ink); word-break: break-all; user-select: all; }
+.copy { align-self: flex-start; font: inherit; font-size: .92rem; font-weight: 600; color: var(--navy); background: transparent; border: 1.5px solid var(--navy); border-radius: 999px; padding: 8px 16px; cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="inv" href="https://teams.microsoft.com/meet/227736038224470?p=kuI5NZRZbOljsEvXwV" target="_blank" rel="noopener" aria-label="Abrir la transmisión del grado en Teams">
+    <img src="invitacion.jpg" alt="Invitación a la graduación virtual de Carlos Ricardo Orozco Carreño, Profesional en Derecho. 2 de octubre, 4:00 p.m.">
+  </a>
+
+  <a class="btn" href="https://teams.microsoft.com/meet/227736038224470?p=kuI5NZRZbOljsEvXwV" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 10l5-3v10l-5-3z"/><rect x="3" y="6" width="12" height="12" rx="2"/></svg>
+    Entrar a la transmisión
+  </a>
+  <p class="hint">Toca el botón o la invitación. Se abrirá Microsoft Teams (o el navegador, si no tienes la app).</p>
+
+  <div class="box">
+    <p>¿No abre? Copia este enlace y pégalo en tu navegador:</p>
+    <span class="url" id="u">https://teams.microsoft.com/meet/227736038224470?p=kuI5NZRZbOljsEvXwV</span>
+    <button class="copy" id="c" type="button">Copiar enlace</button>
+  </div>
+</div>
+
+<script>
+document.getElementById('c').addEventListener('click', function () {
+  var b = this, t = document.getElementById('u').textContent;
+  function sel() { var r = document.createRange(); r.selectNodeContents(document.getElementById('u')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Enlace seleccionado'; }
+  try {
+    navigator.clipboard.writeText(t).then(function () { b.textContent = 'Enlace copiado'; }, sel);
+  } catch (e) { sel(); }
+});
+</script>
+</body>
+</html>
